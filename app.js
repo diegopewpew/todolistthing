@@ -1,6 +1,14 @@
 const express = require('express');
 const math = require('./math.js');
 const app = express();
+const sql = require('mysql')
+const db = sql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'todo'
+});
+
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
@@ -26,6 +34,23 @@ app.get('/contact', (req, res) =>{
     body: 'Node page thing'
   })
 })
+
+app.get('/todo', (req, res) =>{
+  res.render('modules/todo/todolist', {
+    objectHere: 'null'
+  })
+  db.connect()
+  db.query('SELECT * from todolist', function (error, results, fields) {
+    if (error) throw error;
+    console.log(results)
+  });
+  db.end();
+})
+
+app.post('/todo', (req, res) =>{
+  res.render('modules/todo/todolist')
+})
+
 
 app.listen(8000, () => {
   console.log('Example app listening on port 8000!')
