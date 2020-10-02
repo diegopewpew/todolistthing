@@ -1,13 +1,20 @@
-const express = require('express');
-const math = require('./math.js');
-const app = express();
+const express = require('express')
+const math = require('./math.js')
+const app = express()
 const sql = require('mysql')
+const bodyParser = require("body-parser")
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
 const db = sql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'todo'
 });
+db.connect()
 
 app.set("view engine", "ejs");
 
@@ -34,21 +41,29 @@ app.get('/contact', (req, res) =>{
     body: 'Node page thing'
   })
 })
-
 app.get('/todo', (req, res) =>{
-  res.render('modules/todo/todolist', {
-    objectHere: 'null'
-  })
-  db.connect()
   db.query('SELECT * from todolist', function (error, results, fields) {
-    if (error) throw error;
+    res.render('modules/todo/todolist', {
+      rowobject: results
+    })
     console.log(results)
   });
-  db.end();
 })
 
-app.post('/todo', (req, res) =>{
-  res.render('modules/todo/todolist')
+app.post('/todo', (req, res)=> {
+  let content = req.body.entry;
+
+  db.query(`INSERT INTO todolist(content) VALUES('${content}')`, (err, result, fields) => {
+    if(err) {
+      res.render('error', {
+        title: `Error ${err.code}`,
+        message: err.message,
+        code: err.code
+      });
+    } else {
+      res.redirect('/todo');
+    }
+  });
 })
 
 
