@@ -1,0 +1,81 @@
+:root {
+    --caroube: #977CA5;
+    --blue: #1E2F49;
+    --grayblue: #212E3F;
+    --indigoblue: #3A4D70;
+    --grayblueHover: #384D6B;
+}
+
+.bg-caroube {  
+        background-color: var(--caroube) !important;
+}
+
+.bg-blue {
+        background-color: var(--blue) !important;
+}
+
+.bg-indigoblue {
+        background-color: var(--indigoblue) !important;
+}
+
+.bg-grayblue {
+        background-color: var(--grayblue) !important;
+        color: white;
+}
+
+.btn-grayblue {
+        background-color: var(--grayblue) !important;
+        color: white;
+}
+
+.btn-grayblue:hover {
+        background-color: var(--grayblueHover) !important;
+        color: white;
+}
+
+.lnk-favicon: {
+        color: white !important;
+}
+
+.lnk-favicon:hover {
+        color: var(--indigoblue) !important;
+}
+
+.table-dark {
+        background-color: var(--grayblue) !important;
+}
+
+a:hover{
+        text-decoration: none;
+}
+
+.text-header{
+    font-family: "lato";
+    font-weight: 300;
+}
+body {
+  background: linear-gradient(rgba(30, 47, 73, .8), rgba(30, 47, 73, .8)), url("../assets/skulls.png");
+  color: white;
+}
+
+.circle {
+        position: relative;
+        height: 15rem;
+        width: 15rem;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at 35% 35%, white, var(--indigoblue));
+        box-shadow: inset -10px -10px 30px rgba(0,0,0,0.3),
+                    10px 10px 30px rgba(0,0,0,0.3);
+      }
+      
+      .radius {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-bottom: 2px solid black;
+        width: 50%;
+        transform-origin: left;
+        transform: translateY(-50%) rotate(-15deg);
+        box-sizing: border-box;
+        padding-left: 1rem;
+      }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CS 3105</title>
+    <link rel="stylesheet" href="https://www.themonster.xyz/styles/fancy-fonts.css">
+    <link rel="stylesheet" href="https://www.themonster.xyz/styles/google-fonts.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://kit.fontawesome.com/b817fbe0f3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="mx-auto mt-5 rounded text-center">
+        <h3 class="py-2 col-12 text-header p-1 bg-blue container">CS3105 Assignment Thingy <a href="./index.html"
+                class="fas fa-home text-white lnk-favicon"></a></h3>
+        <div class="card mx-auto text-center border-0 mt-4" style="width: 22rem;">
+            <h5 class="card-header bg-grayblue">Enter a Visa Credit Card Number</h5>
+            <div class="card-body text-white bg-indigoblue pb-5" style="min-height: 17rem">
+                <div class="input-group mt-2 mb-1 col-11 mx-auto">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Number:</span>
+                    </div>
+                    <input id="numInput" type="number" class="form-control" placeholder="ex. 4916355557139576"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <button class="mt-3 btn btn-light" type="button" data-toggle="popover" data-trigger="hover"
+                    data-content="Please note that this is for Visa only" onclick="validateCC()">Submit</button>
+                <p class="card-text mt-3">Your credit card is:</p>
+                <p id="numPrint"></p>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-bottom text-center">Kent Bacatan 2020</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/cc.js"></script>
+</body>
+
+</html>
